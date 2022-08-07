@@ -12,11 +12,12 @@ class SignupScreen extends StatelessWidget {
     return
 
       Scaffold(
+        resizeToAvoidBottomInset: true,
         appBar: AppBar(
           backgroundColor: const Color(0xdbfbff),
           title: const Text('Sign Up'),
         ),
-        body: Padding(
+        body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,17 +26,36 @@ class SignupScreen extends StatelessWidget {
                 data: Theme.of(context).copyWith(primaryColor: Colors.black),
                 child: const TextField(
                   decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.blue,
+                          width: 2.0,
+                        ),
+                      ),
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(8),
                       icon: Icon(Icons.assignment_ind),
                       hintText: 'Joe Mama',
                       labelText: 'Full Name'),
                   textAlign: TextAlign.center,
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Theme(
                 data: Theme.of(context).copyWith(primaryColor: Colors.black),
                 child: const TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.blue,
+                          width: 2.0,
+                        ),
+                      ),
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(8),
                       hintText: 'example@email.com',
                       icon: Icon(Icons.email),
                       labelText: 'Email',
@@ -44,15 +64,50 @@ class SignupScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Theme(
                 data: Theme.of(context).copyWith(primaryColor: Colors.black),
                 child: const TextField(
                   obscureText: true,
                   decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.blue,
+                          width: 2.0,
+                        ),
+                      ),
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(8),
                       icon: Icon(Icons.vpn_key),
                       hintText: 'Password',
                       labelText: 'Password'),
                   textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Theme(
+                data: Theme.of(context).copyWith(primaryColor: Colors.black),
+                child: const TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.blue,
+                          width: 2.0,
+                        ),
+                      ),
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(8),
+                      icon: Icon(null),
+                      hintText: 'Confirm Password',
+                      labelText: 'Confirm Password'),
+
+                  textAlign: TextAlign.center,
+
                 ),
               ),
               const SizedBox(
@@ -68,6 +123,29 @@ class SignupScreen extends StatelessWidget {
                 child: const Text('Register'),
                 onPressed: () {},
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text('Already have an account?'),
+              SizedBox(
+                height:30,
+                child:
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle(
+                      color: Colors.blue,
+                      fontSize: 10,
+                    ),
+                  ),
+
+                  onPressed: () {
+
+                  },
+                  child: const Text('sign in'),
+
+                ),
+              ),
+
             ],
           ),
         ),
