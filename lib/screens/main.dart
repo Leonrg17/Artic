@@ -13,7 +13,7 @@ class Artic extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const WelcomeScreen(),
-      initialRoute: SignupScreen.id,
+      initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
