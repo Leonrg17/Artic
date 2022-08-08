@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../screens/HomePage.dart';
-import '../screens/LoginScreen.dart';
-import 'WelcomeScreen.dart';
+import 'screens/HomePage.dart';
+import 'screens/LoginScreen.dart';
+import 'screens/WelcomeScreen.dart';
 
 void main() => runApp(const Artic());
 
