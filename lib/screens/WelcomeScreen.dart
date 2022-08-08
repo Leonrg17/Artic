@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../screens/LoginScreen.dart';
+
+import '../screens/ForgotPassword.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String id = 'welcome_screen';
@@ -14,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
       ),
       body: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, LoginScreen.id);
+          Navigator.pushNamed(context, ForgotPassword.id);
         },
         child: const Text('Press me :^)'),
       ),
