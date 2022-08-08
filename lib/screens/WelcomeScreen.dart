@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../screens/ForgotPassword.dart';
+import '../screens/LoginScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String id = 'welcome_screen';
@@ -10,16 +11,110 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Welcome Screen!'),
-      ),
-      body: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, ForgotPassword.id);
-        },
-        child: const Text('Press me :^)'),
-      ),
-    );
+        appBar: AppBar(
+          toolbarHeight: 120,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Center(
+            child: Column(
+              children: [
+                Text(
+                  'ARTIC',
+                  style: GoogleFonts.roboto(
+                    decoration: TextDecoration.underline,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 64,
+                    color: const Color(0xff1375CF),
+                  ),
+                ),
+                Text(
+                  'A Major Exploring Tool',
+                  style: GoogleFonts.roboto(
+                    height: 0.7,
+                    fontWeight: FontWeight.w300,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 20,
+                    color: const Color(0xff1375CF),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: Column(
+          children: [
+            const SizedBox(height: 20),
+            Center(
+              child: Material(
+                borderRadius: BorderRadius.circular(101),
+                elevation: 5,
+                child: const CircleAvatar(
+                  backgroundImage: AssetImage('images/IceCube.png'),
+                  radius: 100,
+                  backgroundColor: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 180),
+            MaterialButton(
+              minWidth: 350.0,
+              color: const Color(0xff1375CF),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)),
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
+              child: Text(
+                'Join now',
+                style: GoogleFonts.roboto(
+                  height: 0.7,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 28,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+              child: TextButton(
+                onPressed: () {
+                  // change the SignInScreen.id to the actual screen id name
+                  //Navigator.pushNamed(context, SignInScreen.id);
+                },
+                child: Text(
+                  'Sign In',
+                  style: GoogleFonts.roboto(
+                    height: 0.7,
+                    fontWeight: FontWeight.w800,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 20,
+                    color: const Color(0xFF007BFF),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 13),
+            TextButton(
+              onPressed: () {
+                // change the AppInformation.id to the actual screen id name
+                //Navigator.pushNamed(context, AppInformation.id);
+              },
+              child: Text(
+                'How do I use this app?',
+                style: GoogleFonts.roboto(
+                  height: 0.7,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  decoration: TextDecoration.underline,
+                  fontSize: 20,
+                  color: const Color(0xFF007BFF),
+                ),
+              ),
+            ),
+          ],
+        ));
     //return const Text("welcome screen");
   }
 }
