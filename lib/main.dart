@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screens/HomePage.dart';
-import 'screens/LoginScreen.dart';
-import 'screens/WelcomeScreen.dart';
+
+import '../screens/ForgotPassword.dart';
+import '../screens/LoginScreen.dart';
+import '../screens/WelcomeScreen.dart';
 
 void main() => runApp(const Artic());
 
@@ -15,6 +16,7 @@ class Artic extends StatelessWidget {
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
+        ForgotPassword.id: (context) => ForgotPassword(),
         LoginScreen.id: (context) => LoginScreen(),
       },
 
