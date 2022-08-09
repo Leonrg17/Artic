@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../screens/LoginScreen.dart';
 
 class SignupScreen extends StatelessWidget {
   static const String id = 'sign_up_screen';
@@ -121,7 +121,10 @@ class SignupScreen extends StatelessWidget {
                 color: Colors.blue,
                 textColor: Colors.white,
                 child: const Text('Register'),
-                onPressed: () {},
+                onPressed: () {
+
+                  //saved for database stuff
+                },
               ),
               const SizedBox(
                 height: 10,
@@ -139,7 +142,7 @@ class SignupScreen extends StatelessWidget {
                   ),
 
                   onPressed: () {
-
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: const Text('sign in'),
 
