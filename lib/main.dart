@@ -1,9 +1,8 @@
 import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
-
 import '../screens/ForgotPassword.dart';
 import '../screens/LoginScreen.dart';
-import 'WelcomeScreen.dart';
+import '../screens/WelcomeScreen.dart';
 import '../screens/SignupPage.dart';
 
 void main() => runApp(const Artic());
