@@ -1,3 +1,4 @@
+import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -63,7 +64,7 @@ class WelcomeScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.0)),
               onPressed: () {
-                Navigator.pushNamed(context, LoginScreen.id);
+                Navigator.pushNamed(context, SignupScreen.id);
               },
               child: Text(
                 'Join now',
@@ -80,8 +81,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 30,
               child: TextButton(
                 onPressed: () {
-                  // change the SignInScreen.id to the actual screen id name
-                  //Navigator.pushNamed(context, SignInScreen.id);
+                  Navigator.pushNamed(context, LoginScreen.id);
                 },
                 child: Text(
                   'Sign In',
