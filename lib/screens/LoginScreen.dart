@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:artic/constants.dart';
 import 'package:artic/components/rounded_button.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'HomePage.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';import 'HomePage.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
