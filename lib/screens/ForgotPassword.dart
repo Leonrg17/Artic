@@ -1,87 +1,103 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:artic/constants.dart';
+import 'package:artic/components/rounded_button.dart';
+import 'HomePage.dart';
+import '../screens/LoginScreen.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPassword extends StatefulWidget {
   static const String id = 'forgot_password';
-  const ForgotPassword({Key? key}) : super(key: key);
+  @override
+  _ForgotPassword createState() => _ForgotPassword();
+}
+
+class _ForgotPassword extends State<ForgotPassword> {
+  //final _auth = FirebaseAuth.instance;
+  String email = ''; // made these '' just to silence errors
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20.0),
         child: Padding(
-          padding: const EdgeInsets.only(left: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 24.0),
           child: Column(
-            children: [
-              const SizedBox(height: 69),
-              Text(
-                'Forgot Password?',
-                style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.normal,
-                  fontSize: 28,
-                  color: const Color(0xff007bff),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Forgot Password',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Color(0xFF007BFF),
+                    fontSize: 28.0,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
-              const SizedBox(height: 69),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Email Address'),
-                textAlign: TextAlign.left,
+              const SizedBox(
+                height: 30.0,
               ),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Q1: Who\'s your mami?'),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.left,
-              ),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Q2: Who\'s your papi?'),
-                textAlign: TextAlign.left,
-              ),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Q3: What\'s your SSN?'),
-                textAlign: TextAlign.left,
-              ),
-              const TextField(
-                decoration: InputDecoration(hintText: 'New Password'),
-                textAlign: TextAlign.left,
-              ),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Confirm New Password'),
-                textAlign: TextAlign.left,
-              ),
-              MaterialButton(
-                minWidth: 350.0,
-                color: const Color(0xff1375CF),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(22.0)),
-                onPressed: () {
-                  // update password
+                onChanged: (value) {
+                  email = value;
                 },
-                child: Text(
-                  'Reset Password',
-                  style: GoogleFonts.roboto(
-                    height: 0.7,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 28,
-                    color: Colors.white,
-                  ),
+                decoration: kTextFieldDecoration.copyWith(
+                    icon: const Icon(Icons.email),
+                    hintText: 'Enter Email',
+                    labelText: 'Email Address'),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              const SizedBox(
+                height: 12.0,
+              ),
+              RoundedButton(
+                  title: 'Reset',
+                  color: const Color(0xFF1375CF),
+                  onPressed: () async {
+                    setState(() {});
+
+                    try {
+                      final user = email; // filler code until DB is set up
+                      /*
+                    final user = await _auth.signInWithEmailAndPassword(
+                        email: email, password: password);
+                     */
+                      if (user != '') {
+                        Navigator.pushNamed(context, HomePage.id);
+                      }
+
+                      setState(() {});
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                  height: 50.0,
+                  width: 250.0),
+              const Text(
+                'Don\'t have an account?',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
               TextButton(
+                style: TextButton.styleFrom(
+                    textStyle:
+                        const TextStyle(color: Colors.blue, fontSize: 20)),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, LoginScreen.id);
                 },
-                child: Text(
-                  'Cancel',
-                  style: GoogleFonts.roboto(
-                    height: 0.7,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    decoration: TextDecoration.underline,
-                    fontSize: 20,
-                    color: const Color(0xFF007BFF),
-                  ),
-                ),
+                child: const Text('Sign In'),
               ),
             ],
           ),

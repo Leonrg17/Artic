@@ -32,15 +32,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 const EdgeInsets.symmetric(vertical: 40.0, horizontal: 24.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                const Text(
-                  'Sign In',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Color(0xFF007BFF),
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.w500,
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Sign In',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Color(0xFF007BFF),
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -52,11 +54,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   onChanged: (value) {
                     email = value;
                   },
-                  decoration:
-                      kTextFieldDecoration.copyWith(hintText: 'Email Address'),
+                  decoration: kTextFieldDecoration.copyWith(
+                      icon: const Icon(Icons.email),
+                      hintText: 'Enter Email',
+                      labelText: 'Email Address'),
                 ),
                 const SizedBox(
-                  height: 40.0,
+                  height: 10.0,
                 ),
                 TextField(
                   obscureText: true,
@@ -64,11 +68,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   onChanged: (value) {
                     password = value;
                   },
-                  decoration:
-                      kTextFieldDecoration.copyWith(hintText: 'Password'),
+                  decoration: kTextFieldDecoration.copyWith(
+                    icon: const Icon(Icons.vpn_key),
+                    hintText: 'Enter Password',
+                    labelText: 'Password',
+                  ),
                 ),
                 const SizedBox(
-                  height: 24.0,
+                  height: 12.0,
                 ),
                 RoundedButton(
                     title: 'Confirm',
@@ -96,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     height: 50.0,
-                    width: 25.0),
+                    width: 250.0),
                 const Text(
                   'Don\'t have an account?',
                   textAlign: TextAlign.center,
@@ -107,33 +114,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 TextButton(
-                  style: const ButtonStyle(
-                      //backgroundColor: MaterialStateProperty.all(Colors.red)
-                      ),
+                  style: TextButton.styleFrom(
+                      textStyle:
+                          const TextStyle(color: Colors.blue, fontSize: 20)),
                   onPressed: () {
                     Navigator.pushNamed(context, SignupScreen.id);
                   },
-                  child: const Text(
-                    'Sign Up',
-                    style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 20.0,
-                        color: Color(0xFF007BFF)),
-                  ),
+                  child: const Text('Sign Up'),
                 ),
                 TextButton(
-                    style: const ButtonStyle(
-                        //backgroundColor: MaterialStateProperty.all(Colors.red)
-                        ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, ForgotPassword.id);
-                    },
-                    child: const Text('Forgot Password?',
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontSize: 20.0,
-                          color: Color(0xFF007BFF),
-                        ))),
+                  style: TextButton.styleFrom(
+                      textStyle:
+                          const TextStyle(color: Colors.blue, fontSize: 20)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, ForgotPassword.id);
+                  },
+                  child: const Text('Forgot Password?'),
+                ),
               ],
             ),
           ),

@@ -10,9 +10,12 @@ const kSendButtonTextStyle = TextStyle(
 
 // copied from Flash Chat App as an example
 const kTextFieldDecoration = InputDecoration(
+  labelText: '',
+  icon: Icon(null),
+  isDense: true,
+  contentPadding: EdgeInsets.all(8),
   hintText: 'Enter a value',
   hintStyle: TextStyle(fontSize: 20.0),
-  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(color: Color(0xFF006CD0), width: 1.0),
   ),
