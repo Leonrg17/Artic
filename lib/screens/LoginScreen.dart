@@ -28,7 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
         child: ModalProgressHUD(
           inAsyncCall: showSpinner,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 24.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 40.0, horizontal: 24.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -63,39 +64,39 @@ class _LoginScreenState extends State<LoginScreen> {
                   onChanged: (value) {
                     password = value;
                   },
-                  decoration: kTextFieldDecoration.copyWith(hintText: 'Password'),
+                  decoration:
+                      kTextFieldDecoration.copyWith(hintText: 'Password'),
                 ),
                 const SizedBox(
                   height: 24.0,
                 ),
                 RoundedButton(
-                  title: 'Confirm',
-                  color: const Color(0xFF1375CF),
-                  onPressed: () async {
-                    setState(() {
-                      showSpinner = true;
-                    });
+                    title: 'Confirm',
+                    color: const Color(0xFF1375CF),
+                    onPressed: () async {
+                      setState(() {
+                        showSpinner = true;
+                      });
 
-                    try {
-                      final user = null; // filler code until DB is set up
-                      /*
+                      try {
+                        final user = email; // filler code until DB is set up
+                        /*
                       final user = await _auth.signInWithEmailAndPassword(
                           email: email, password: password);
                        */
-                      if (user != null) {
-                        Navigator.pushNamed(context, HomePage.id);
-                      }
+                        if (user != '') {
+                          Navigator.pushNamed(context, HomePage.id);
+                        }
 
-                      setState(() {
-                        showSpinner = false;
-                      });
-                    } catch (e) {
-                      print(e);
-                    }
-                  },
-                  height: 50.0,
-                  width: 25.0
-                ),
+                        setState(() {
+                          showSpinner = false;
+                        });
+                      } catch (e) {
+                        print(e);
+                      }
+                    },
+                    height: 50.0,
+                    width: 25.0),
                 const Text(
                   'Don\'t have an account?',
                   textAlign: TextAlign.center,

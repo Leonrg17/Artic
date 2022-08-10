@@ -4,6 +4,7 @@ import '../screens/ForgotPassword.dart';
 import '../screens/LoginScreen.dart';
 import '../screens/WelcomeScreen.dart';
 import '../screens/SignupPage.dart';
+import '../screens/HomePage.dart';
 
 void main() => runApp(const Artic());
 
@@ -20,6 +21,7 @@ class Artic extends StatelessWidget {
         ForgotPassword.id: (context) => ForgotPassword(),
         LoginScreen.id: (context) => LoginScreen(),
         SignupScreen.id: (context) => SignupScreen(),
+        HomePage.id: (context) => HomePage(),
       },
 
       //home: HomePage(),
