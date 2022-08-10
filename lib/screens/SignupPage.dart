@@ -1,6 +1,8 @@
 import 'package:artic/screens/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:artic/components/rounded_button.dart';
+import '../screens/LoginScreen.dart';
+
 
 class SignupScreen extends StatelessWidget {
   static const String id = 'sign_up_screen';

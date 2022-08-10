@@ -1,8 +1,8 @@
 import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../screens/SignupPage.dart';
 
-import '../screens/LoginScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String id = 'welcome_screen';
