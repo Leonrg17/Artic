@@ -1,5 +1,8 @@
+import 'package:artic/screens/LoginScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:artic/components/rounded_button.dart';
 import '../screens/LoginScreen.dart';
+
 
 class SignupScreen extends StatelessWidget {
   static const String id = 'sign_up_screen';
@@ -113,18 +116,12 @@ class SignupScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5)
-                ),
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                color: Colors.blue,
-                textColor: Colors.white,
-                child: const Text('Register'),
-                onPressed: () {
-
-                  //saved for database stuff
-                },
+              RoundedButton(
+                title: 'Register',
+                color: const Color(0xFF1375CF),
+                onPressed: () {},
+                height: 50.0,
+                width: 200.00
               ),
               const SizedBox(
                 height: 10,
@@ -148,7 +145,6 @@ class SignupScreen extends StatelessWidget {
 
                 ),
               ),
-
             ],
           ),
         ),
