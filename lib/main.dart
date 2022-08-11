@@ -5,6 +5,7 @@ import '../screens/LoginScreen.dart';
 import '../screens/WelcomeScreen.dart';
 import '../screens/SignupPage.dart';
 import '../screens/HomePage.dart';
+import 'package:get/get.dart';
 
 void main() => runApp(const Artic());
 
@@ -13,7 +14,7 @@ class Artic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: const WelcomeScreen(),
       initialRoute: WelcomeScreen.id,
       routes: {
