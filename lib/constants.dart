@@ -1,8 +1,11 @@
-import 'package:artic/screens/HomePage.dart';
-import 'package:artic/screens/WelcomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+
+// screens
+import 'screens/HomePage.dart';
+import 'screens/MyPlans.dart';
+import 'screens/WelcomeScreen.dart';
 
 // potentially make this the entire button, constant button for confirm?
 const kSendButtonTextStyle = TextStyle(
@@ -27,6 +30,7 @@ const kTextFieldDecoration = InputDecoration(
   ),
 );
 
+// Navigation bar
 SizedBox kNavBar = SizedBox(
   width: 240,
   child: Drawer(
@@ -42,10 +46,14 @@ SizedBox kNavBar = SizedBox(
             crossAxisAlignment: CrossAxisAlignment.start,
             verticalDirection: VerticalDirection.up,
             children: [
-              const CircleAvatar(
-                backgroundImage: AssetImage('images/IceCube.png'),
-                radius: 20,
-                backgroundColor: Colors.white,
+              Material(
+                borderRadius: BorderRadius.circular(101),
+                elevation: 5,
+                child: const CircleAvatar(
+                  backgroundImage: AssetImage('images/IceCube.png'),
+                  radius: 20,
+                  backgroundColor: Colors.white,
+                ),
               ),
               const SizedBox(
                 width: 10,
@@ -72,16 +80,7 @@ SizedBox kNavBar = SizedBox(
         //note: can decrease spacing by adding density
         // dense: true,
         // visualDensity: const VisualDensity(vertical: -3),
-        leading: Container(
-          decoration: BoxDecoration(
-            color: Colors.black,
-            border: Border.all(
-              color: Colors.black,
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-          ),
-          child: const Icon(Icons.home, color: Colors.white, size: 30),
-        ),
+        leading: kHomeIcon,
         title: const KNavBarText(title: 'Overview'),
         onTap: () {
           Get.to(() => HomePage());
@@ -103,7 +102,9 @@ SizedBox kNavBar = SizedBox(
         leading: const ClipRect(
             child: Icon(Icons.task, color: Colors.black, size: 40)),
         title: const KNavBarText(title: 'My Plans'),
-        onTap: () {},
+        onTap: () {
+          Get.to(() => MyPlans());
+        },
       ),
       ListTile(
         leading: const ClipRect(
@@ -146,6 +147,7 @@ SizedBox kNavBar = SizedBox(
   )),
 );
 
+//Helper class for kNavBar
 class KNavBarText extends StatelessWidget {
   final String title;
   final Color fontColor;
@@ -171,4 +173,61 @@ class KNavBarText extends StatelessWidget {
       ),
     );
   }
+}
+
+// Home button icon
+Container kHomeIcon = Container(
+  decoration: BoxDecoration(
+    color: Colors.black,
+    border: Border.all(
+      color: Colors.black,
+    ),
+    borderRadius: const BorderRadius.all(Radius.circular(5)),
+  ),
+  child: const Icon(Icons.home, color: Colors.white, size: 30),
+);
+
+// App bar constant (top of each page)
+class KAppBar extends StatelessWidget with PreferredSizeWidget {
+  final String title;
+  const KAppBar({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      automaticallyImplyLeading: true,
+      centerTitle: true,
+      toolbarHeight: 60,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      iconTheme: const IconThemeData(color: Color(0xFF007BFF)),
+      title: Text(
+        title,
+        style: GoogleFonts.roboto(
+          fontWeight: FontWeight.w700,
+          fontStyle: FontStyle.normal,
+          fontSize: 26,
+          color: const Color(0xFF007BFF),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Get.to(() => HomePage());
+          },
+          child: kHomeIcon,
+        )
+      ],
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(0),
+        child: Container(
+          color: Colors.grey,
+          height: 1.0,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
