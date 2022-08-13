@@ -1,3 +1,4 @@
+import 'package:artic/screens/CompareDegree.dart';
 import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
 import '../screens/ForgotPassword.dart';
@@ -25,6 +26,7 @@ class Artic extends StatelessWidget {
         SignupScreen.id: (context) => SignupScreen(),
         HomePage.id: (context) => HomePage(),
         MyPlans.id: (context) => MyPlans(),
+        CompareDegree.id: (context) => CompareDegree(),
       },
 
       //home: HomePage(),
