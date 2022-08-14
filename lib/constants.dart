@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'screens/HomePage.dart';
 import 'screens/MyPlans.dart';
 import 'screens/WelcomeScreen.dart';
+import 'screens/CompareDegree.dart';
 
 // potentially make this the entire button, constant button for confirm?
 const kSendButtonTextStyle = TextStyle(
@@ -92,6 +93,7 @@ SizedBox kNavBar = SizedBox(
             child: Icon(Icons.compare_arrows, color: Colors.black, size: 40)),
         title: const KNavBarText(title: 'Compare Plans'),
         onTap: () {
+          Get.to(() => CompareDegree());
         },
       ),
       ListTile(
