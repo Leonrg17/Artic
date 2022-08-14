@@ -1,8 +1,9 @@
-import 'package:artic/screens/LoginScreen.dart';
-import 'package:artic/screens/HomePage.dart';
-import 'package:flutter/material.dart';
 import 'package:artic/components/rounded_button.dart';
+import 'package:artic/screens/LoginScreen.dart';
+import 'package:artic/screens/Overview.dart';
+import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
 import '../constants.dart';
 import '../screens/LoginScreen.dart';
 
@@ -121,7 +122,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           email: email, password: password);
                        */
                         if (user != '') {
-                          Navigator.pushNamed(context, HomePage.id);
+                          Navigator.pushNamed(context, Overview.id);
                         }
 
                         setState(() {

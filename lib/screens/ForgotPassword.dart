@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:artic/constants.dart';
 import 'package:artic/components/rounded_button.dart';
-import 'HomePage.dart';
+import 'package:artic/constants.dart';
+import 'package:flutter/material.dart';
+
 import '../screens/LoginScreen.dart';
+import 'Overview.dart';
 
 class ForgotPassword extends StatefulWidget {
   static const String id = 'forgot_password';
@@ -71,7 +72,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                         email: email, password: password);
                      */
                       if (user != '') {
-                        Navigator.pushNamed(context, HomePage.id);
+                        Navigator.pushNamed(context, Overview.id);
                       }
 
                       setState(() {});
