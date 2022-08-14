@@ -1,10 +1,11 @@
+import 'package:artic/components/rounded_button.dart';
+import 'package:artic/constants.dart';
 import 'package:artic/screens/ForgotPassword.dart';
 import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
-import 'package:artic/constants.dart';
-import 'package:artic/components/rounded_button.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'HomePage.dart';
+
+import 'Overview.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -92,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           email: email, password: password);
                        */
                         if (user != '') {
-                          Navigator.pushNamed(context, HomePage.id);
+                          Navigator.pushNamed(context, Overview.id);
                         }
 
                         setState(() {
