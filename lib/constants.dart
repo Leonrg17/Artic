@@ -1,3 +1,4 @@
+import 'package:artic/screens/ExploreMajors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -90,13 +91,16 @@ SizedBox kNavBar = SizedBox(
         leading: const ClipRect(
             child: Icon(Icons.compare_arrows, color: Colors.black, size: 40)),
         title: const KNavBarText(title: 'Compare Plans'),
-        onTap: () {},
+        onTap: () {
+        },
       ),
       ListTile(
         leading: const ClipRect(
             child: Icon(Icons.search, color: Colors.black, size: 40)),
         title: const KNavBarText(title: 'Explore Majors'),
-        onTap: () {},
+        onTap: () {
+          Get.to(() => ExploreMajors());
+        },
       ),
       ListTile(
         leading: const ClipRect(

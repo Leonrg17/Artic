@@ -1,3 +1,4 @@
+import 'package:artic/screens/HomePage.dart';
 import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,8 +99,7 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 13),
             TextButton(
               onPressed: () {
-                // change the AppInformation.id to the actual screen id name
-                //Navigator.pushNamed(context, AppInformation.id);
+                Navigator.pushNamed(context, HomePage.id);
               },
               child: Text(
                 'How do I use this app?',
