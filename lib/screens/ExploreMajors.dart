@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:artic/constants.dart';
 import 'package:artic/components/rounded_button.dart';
+import 'package:artic/constants.dart';
+import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:search_choices/search_choices.dart';
-import 'HomePage.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'Overview.dart';
 
 class ExploreMajors extends StatefulWidget {
   static const String id = 'explore_majors';
@@ -13,24 +13,38 @@ class ExploreMajors extends StatefulWidget {
 }
 
 class _ExploreMajorsState extends State<ExploreMajors> {
-
   bool showSpinner = false;
 
   // Tester data for searchable dropdown
   List<int> selectedColleges = [];
   final List<DropdownMenuItem> colleges = [
-    const DropdownMenuItem(value: "San Jose State University (SJSU)", child: Text("San Jose State University (SJSU)")),
-    const DropdownMenuItem(value: "University of California San Diego (USCD)", child: Text("University of California San Diego (USCD)")),
-    const DropdownMenuItem(value: "University of California Los Angeles (UCLA)", child: Text("University of California Los Angeles (UCLA)")),
-    const DropdownMenuItem(value: "California State University San Marcos (CSUSM)", child: Text("California State University San Marcos (CSUSM)")),
+    const DropdownMenuItem(
+        value: "San Jose State University (SJSU)",
+        child: Text("San Jose State University (SJSU)")),
+    const DropdownMenuItem(
+        value: "University of California San Diego (USCD)",
+        child: Text("University of California San Diego (USCD)")),
+    const DropdownMenuItem(
+        value: "University of California Los Angeles (UCLA)",
+        child: Text("University of California Los Angeles (UCLA)")),
+    const DropdownMenuItem(
+        value: "California State University San Marcos (CSUSM)",
+        child: Text("California State University San Marcos (CSUSM)")),
   ];
 
   List<int> selectedMajors = [];
   final List<DropdownMenuItem> majors = [
-    const DropdownMenuItem(value: "B.S. Computer Engineering", child: Text("B.S. Computer Engineering")),
-    const DropdownMenuItem(value: "B.A. Business Marketing", child: Text("B.A. Business Marketing")),
-    const DropdownMenuItem(value: "B.S. Software Engineering", child: Text("B.S. Software Engineering")),
-    const DropdownMenuItem(value: "B.A. Philosophy", child: Text("B.A. Philosophy")),
+    const DropdownMenuItem(
+        value: "B.S. Computer Engineering",
+        child: Text("B.S. Computer Engineering")),
+    const DropdownMenuItem(
+        value: "B.A. Business Marketing",
+        child: Text("B.A. Business Marketing")),
+    const DropdownMenuItem(
+        value: "B.S. Software Engineering",
+        child: Text("B.S. Software Engineering")),
+    const DropdownMenuItem(
+        value: "B.A. Philosophy", child: Text("B.A. Philosophy")),
   ];
 
   @override
@@ -50,7 +64,7 @@ class _ExploreMajorsState extends State<ExploreMajors> {
           inAsyncCall: showSpinner,
           child: Padding(
             padding:
-            const EdgeInsets.symmetric(vertical: 40.0, horizontal: 24.0),
+                const EdgeInsets.symmetric(vertical: 40.0, horizontal: 24.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -145,7 +159,7 @@ class _ExploreMajorsState extends State<ExploreMajors> {
                           email: email, password: password);
                        */
                         if (user != '') {
-                          Navigator.pushNamed(context, HomePage.id);
+                          Navigator.pushNamed(context, Overview.id);
                         }
 
                         setState(() {
@@ -162,6 +176,7 @@ class _ExploreMajorsState extends State<ExploreMajors> {
           ),
         ),
       ),
+      drawer: kNavBar,
     );
   }
 }

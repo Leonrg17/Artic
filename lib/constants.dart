@@ -1,13 +1,13 @@
 import 'package:artic/screens/ExploreMajors.dart';
+import 'package:artic/screens/Overview.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import 'screens/CompareDegree.dart';
 // screens
-import 'screens/HomePage.dart';
 import 'screens/MyPlans.dart';
 import 'screens/WelcomeScreen.dart';
-import 'screens/CompareDegree.dart';
 
 // potentially make this the entire button, constant button for confirm?
 const kSendButtonTextStyle = TextStyle(
@@ -85,7 +85,7 @@ SizedBox kNavBar = SizedBox(
         leading: kHomeIcon,
         title: const KNavBarText(title: 'Overview'),
         onTap: () {
-          Get.to(() => HomePage());
+          Get.to(() => Overview());
         },
       ),
       ListTile(
@@ -219,7 +219,7 @@ class KAppBar extends StatelessWidget with PreferredSizeWidget {
       actions: [
         TextButton(
           onPressed: () {
-            Get.to(() => HomePage());
+            Get.to(() => Overview());
           },
           child: kHomeIcon,
         )
