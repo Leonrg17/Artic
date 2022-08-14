@@ -13,34 +13,34 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: true,
+          centerTitle: true,
           toolbarHeight: 120,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: Center(
-            child: Column(
-              children: [
-                Text(
-                  'ARTIC',
-                  style: GoogleFonts.roboto(
-                    decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 64,
-                    color: const Color(0xff1375CF),
-                  ),
+          title: Column(
+            children: [
+              Text(
+                'ARTIC',
+                style: GoogleFonts.roboto(
+                  decoration: TextDecoration.underline,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 64,
+                  color: const Color(0xff1375CF),
                 ),
-                Text(
-                  'A Major Exploring Tool',
-                  style: GoogleFonts.roboto(
-                    height: 0.7,
-                    fontWeight: FontWeight.w300,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 20,
-                    color: const Color(0xff1375CF),
-                  ),
+              ),
+              Text(
+                'A Major Exploring Tool',
+                style: GoogleFonts.roboto(
+                  height: 0.7,
+                  fontWeight: FontWeight.w300,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 20,
+                  color: const Color(0xff1375CF),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         body: Column(

@@ -1,8 +1,11 @@
+import 'package:artic/screens/CompareDegree.dart';
 import 'package:artic/screens/SignupPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../screens/ForgotPassword.dart';
 import '../screens/LoginScreen.dart';
+import '../screens/MyPlans.dart';
 import '../screens/Overview.dart';
 import '../screens/SignupPage.dart';
 import '../screens/WelcomeScreen.dart';
@@ -14,7 +17,7 @@ class Artic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: const WelcomeScreen(),
       initialRoute: WelcomeScreen.id,
       routes: {
@@ -23,6 +26,8 @@ class Artic extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         SignupScreen.id: (context) => SignupScreen(),
         Overview.id: (context) => Overview(),
+        MyPlans.id: (context) => MyPlans(),
+        CompareDegree.id: (context) => CompareDegree(),
       },
 
       //home: HomePage(),
