@@ -9,11 +9,19 @@ class MyPlans extends StatefulWidget {
 }
 
 class _MyPlansState extends State<MyPlans> {
+  List<int> _selectedItems = <int>[];
+  List<String> plans = ['B.S in CMPE - SJSU', 'B.S in PHIL - SJSU'];
+  final int planSize = 2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const KAppBar(title: "My Plans"),
-      body: const Text("hello"),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return Container();
+        },
+      ),
       drawer: kNavBar,
     );
   }
